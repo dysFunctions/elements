@@ -1,3 +1,6 @@
+Portland Code School - Winter Fullstack Javascript Class - Capstone Project
+
+
 elements
 ========
 
