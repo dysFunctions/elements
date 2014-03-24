@@ -3,9 +3,21 @@
 <head>
 	<meta charset='utf-8'>
 	<title>Elements Quiz</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/lib/require.js" data-main="js/main" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
-	<h1>ELEMENTS. ARE. AWESOME.</h1>
-	<h2>Let's Chemistry!</h2>
+	<div id = "container">
+		<h1>Elements Game</h1>
+		<div id = "element-box">
+			<label for="element-name">Element Name: </label>
+			<input type = "text" placeholder="Enter Element Name" id="nameInput">
+			<label for="atomic-number">Atomic Number: </label>
+			<input type = "text" placeholder="Enter Atomic Number" id="numInput">
+			<h1 id="symbol">...</h1>
+			<p>Atomic weight: <span id="atomic-weight">...</span> g/mol</p>
+		</div>
+		<button id="submit">Submit</submit>
+	</div>
 </body>
 </html>
