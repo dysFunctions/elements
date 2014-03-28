@@ -11,10 +11,16 @@ button, input, optgroup, select, textarea {
 table {
 	width: 500px;
 	text-align: left;
+	border-collapse: collapse;
+}
+
+#scores-table {
+	margin-top: 25px;
 }
 
 table td,th {
-	border-bottom: 1px solid #00FF00;
+	border: 1px solid #00FF00;
+	width: 50%;
 }
 
 p {
