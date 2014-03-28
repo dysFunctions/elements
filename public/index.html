@@ -3,33 +3,73 @@
 <head>
 	<meta charset='utf-8'>
 	<title>Elements Quiz</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/main.css"rel="stylesheet" type="text/css" >
 	<script src="js/lib/require.js" data-main="js/main" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
 	<div id = "container">
 		<h1>Elements Game</h1>
-		<div id = "element-box">
-			<label for="element-name">Element Name: </label>
-			<input type = "text" placeholder="Enter Element Name" id="nameInput">
-			<label for="atomic-number">Atomic Number: </label>
-			<input type = "text" placeholder="Enter Atomic Number" id="numInput">
-			<h1 id="symbol">...</h1>
-			<p>Atomic weight: <span id="atomic-weight">...</span> g/mol</p>
-		</div>
-		<button id="submit">Submit</button><button id="score"></button>
-		<div id="scores-table">
-			<table class="table">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Score</th>
-					</tr>
-				</thead>
-				<tbody>
-				</tbody>
-			</table>
-		</div>
+
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#home" data-toggle="tab">Welcome</a></li>
+				<li><a href="#quiz" data-toggle="tab">Elements Quiz</a></li>
+				<li><a href="#highScores" data-toggle="tab">High Scores</a></li>
+				<li><a href="#periodicTable" data-toggle="tab">Periodic Table</a></li>
+			</ul>
+
+			<div class="tab-content">
+				<div class="tab-pane fade in active" id="home">
+					<h4>Welcome screen</h4>
+				</div>
+
+
+				<div class="tab-pane fade" id="quiz">
+					<div id="element-box">
+						<form role="form">
+							<div class="form-group">
+								<label for="element-name">Element Name: </label>
+								<h4 id="name" style="display:none">...</h4>
+								<input type = "text" placeholder="Enter Element Name" id="nameInput">
+							</div>
+							<div class="form-group">
+								<label for="atomic-number">Atomic Number: </label>
+								<input type = "text" placeholder="Enter Atomic Number" id="numInput">
+							</div>
+							<div class="form-group">
+								<h1 id="symbol">...</h1>
+								<input type="text" placeholder="Enter Symbol" id="symbolInput" style="display:none">
+								<p>Atomic weight: <span id="atomic-weight">...</span> g/mol</p>
+							</div>
+							
+
+						</form>
+					</div>
+					<button type="submit" class="btn btn-default" id="submit">Submit</button>
+							<button class="btn btn-default" id="score">...</button>
+				</div>
+				
+					<div class="tab-pane fade" id="highScores">
+						<h4>High Scores</h4>
+						<div id="scores-table">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Score</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				
+					<div class="tab-pane fade" id="periodicTable">
+						<h4>I am the periodic table</h4>
+						<div id="periodicTable"></div>
+					</div>
+			</div>
 	</div>
 </body>
 </html>
