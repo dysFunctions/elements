@@ -7,6 +7,7 @@ define(function(require){
 
       initialize: function(){
         this.render();
+        this.collection.topTen();
       },
 
       render: function(){

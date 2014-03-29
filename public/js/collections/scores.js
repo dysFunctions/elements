@@ -3,7 +3,14 @@ define(function(require){
   var Score = require ('models/score')
 
   var Scores = Backbone.Collection.extend({
-    model: Score
+    model: Score,
+
+    topTen: function(){
+      this.forEach(function(model){
+        console.log(model);
+      });
+    }
+
   });
 
   return Scores;

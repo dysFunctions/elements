@@ -10,7 +10,6 @@ define(function (require){
 
     $(function(){
         var app = {};
-        window.app = app;
 
         var elements = new Elements();
         var scores = new Scores();
@@ -46,7 +45,6 @@ define(function (require){
         });
 
 
-
         function createElement (elementObject) {
             for (var i = 0; i < elementObject.elements.length; i++){
               if(elementObject.elements[i].name){
@@ -71,7 +69,8 @@ define(function (require){
                 elements.add(element);
         }
 
-
+      window.app = app;
+      
     });
 
 });
