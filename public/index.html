@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset='utf-8'>
-	<title>Elements Quiz</title>
+	<title>Elements Game</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="css/main.css"rel="stylesheet" type="text/css" >
 	<script src="js/lib/require.js" data-main="js/main" type="text/javascript" charset="utf-8"></script>
@@ -27,28 +27,27 @@
 				<div class="tab-pane fade" id="quiz">
 					<div id="element-box">
 						<form role="form">
-							<div class="form-group">
+							<div class="form-group" id="nameField">
 								<label for="element-name">Element Name: </label>
-								<h4 id="name" style="display:none">...</h4>
+								<span id="name" class="inactive">...</span>
 								<input type = "text" placeholder="Enter Element Name" id="nameInput">
 							</div>
-							<div class="form-group">
-								<label for="atomic-number">Atomic Number: </label>
-								<input type = "text" placeholder="Enter Atomic Number" id="numInput">
+							<div class="form-group" id="numField">
+								<h5>Atomic number: <span id="atNum"></span></h5>
 							</div>
-							<div class="form-group">
+							<div class="form-group" id="symField">
 								<h1 id="symbol">...</h1>
-								<input type="text" placeholder="Enter Symbol" id="symbolInput" style="display:none">
+								<input type="text" placeholder="Enter Symbol" id="symbolInput" class="inactive">
 								<p>Atomic weight: <span id="atomic-weight">...</span> g/mol</p>
 							</div>
-							
+
 
 						</form>
 					</div>
 					<button type="submit" class="btn btn-default" id="submit">Submit</button>
 							<button class="btn btn-default" id="score">...</button>
 				</div>
-				
+
 					<div class="tab-pane fade" id="highScores">
 						<h4>High Scores</h4>
 						<div id="scores-table">
@@ -64,7 +63,7 @@
 							</table>
 						</div>
 					</div>
-				
+
 					<div class="tab-pane fade" id="periodicTable">
 						<h4>I am the periodic table</h4>
 						<div id="periodicTable"></div>

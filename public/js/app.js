@@ -19,30 +19,32 @@ define(function (require){
             scores.add(model);
           })
 
-          var scoresView = new ScoresView({collection:scores});
+           var scoresView = new ScoresView({collection:scores});
+        }).done(function(){
+          $.get('api/data', function(data){
 
+              var table = data.table; // Array of objects
+              var lanthanoids = data.lanthanoids; // Array of objects
+              var actinoids = data.actinoids; // Array of objects
+
+              table.forEach( function (data) {
+                  createElement(data);
+              });
+   // ------------ Lanthanoid and Actinoid Objects are different than table objects. need to figure out createElement func
+              lanthanoids.forEach( function (data) {
+                  createElementAlt(data);
+              });
+
+              actinoids.forEach( function (data) {
+                  createElementAlt(data);
+              });
+  //---------------------------------------------------------------------------------------------------------------------
+
+
+             var elementView = new ElementView({collection: elements, collection2: scores});
+          });
         });
 
-        $.get('api/data', function(data){
-
-            var table = data.table; // Array of objects
-            var lanthanoids = data.lanthanoids; // Array of objects
-            var actinoids = data.actinoids; // Array of objects
-
-            table.forEach( function (data) {
-                createElement(data);
-            });
- // ------------ Lanthanoid and Actinoid Objects are different than table objects. need to figure out createElement func
-            lanthanoids.forEach( function (data) {
-                createElementAlt(data);
-            });
-
-            actinoids.forEach( function (data) {
-                createElementAlt(data);
-            });
-//---------------------------------------------------------------------------------------------------------------------
-            var elementView = new ElementView({collection: elements});
-        });
 
 
         function createElement (elementObject) {
@@ -70,7 +72,7 @@ define(function (require){
         }
 
       window.app = app;
-      
+
     });
 
 });

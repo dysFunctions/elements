@@ -3,12 +3,19 @@ define(function(require){
   var Score = require ('models/score')
 
   var Scores = Backbone.Collection.extend({
+    url: '/api/scores',
     model: Score,
 
-    topTen: function(){
+    comparator: function(model){
+      return parseInt(model.get('score'));
+    },
+
+    topTen: function(name,qScore){
+      var scoresArray = [{name:name, score:qScore}];
       this.forEach(function(model){
-        console.log(model);
+        scoresArray.push(model.attributes);
       });
+      return scoresArray;
     }
 
   });

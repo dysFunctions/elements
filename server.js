@@ -3,7 +3,7 @@ var fs = require('fs');
 var url = require('url');
 var mime = require('mime');
 var path = require('path');
-var db = require('orchestrate')('24512bf3-f66d-40fd-bc7e-144753e2f84e');
+var db = require('orchestrate')('insert key here');
 
 http.createServer(function(req, res){
 	var pathname = url.parse(req.url, true).pathname;
@@ -12,7 +12,9 @@ http.createServer(function(req, res){
 		apiHandler(req, res);
 	} else if (pathname === '/api/scores'){
 		scoresData(req,res);
-	}	else {
+	} else if (pathname === '/api/scores/:id'){
+		scoresData(req,res);
+	} else {
 			if (pathname === '/'){
 				pathname +='index.html';
 			}
@@ -44,22 +46,22 @@ function scoresData(req, res){
 		if(req.method === "GET"){
 		db.get('topTen','scoresArray').then(function(result){
 			res.setHeader('Content-Type', mime.lookup('json'));
+		 console.log(result.body);
 			res.end(JSON.stringify(result.body));
 		}).fail(function (err){
 			console.log(err);
 		});
-	} else if (req.method === "POST"){
+	} else if (req.method === "POST" || req.method === "PUT"){
 		var body ='';
 		req.on('data', function(chunk){
 			body += chunk;
 		});
 		req.on('end', function(){
-			console.log(JSON.parse(body).scores);
 			db.put('topTen','scoresArray', JSON.parse(body))
 			.then(function(results){
 				console.log("Data successfully pushed to DB.");
 			}).fail(function(err){ console.log("error");});
-			res.end(body);
+			res.end();
 		});
 
 	}
