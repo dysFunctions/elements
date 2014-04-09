@@ -8,14 +8,18 @@ define(function(require){
       initialize: function(){
         var self = this;
         this.collection.on('newScore', function(params){
-          var data = [];
-          self.collection.add(params);
-          self.render();
-          self.collection.forEach(function(model){
-            data.push(model.attributes);
-          });
-          self.scoreSync(data);
-        });
+          var topTen = self.collection.topTen();
+          var minScore = _.min(topTen);
+          if (topTen.length < 10){
+            self.pushScores(params);
+          }
+          else if(params.score > minScore){
+            self.collection.shift();
+            self.pushScores(params);
+          }
+      });
+
+
         this.render();
 
       },
@@ -37,6 +41,16 @@ define(function(require){
           type: 'PUT',
           data: JSON.stringify({"scores":params})
         });
+      },
+
+      pushScores: function(params){
+        var data = [];
+        this.collection.add(params);
+        this.render();
+        this.collection.forEach(function(model){
+          data.push(model.attributes);
+        });
+        this.scoreSync(data);
       }
 
     });

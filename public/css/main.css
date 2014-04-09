@@ -38,7 +38,7 @@ p {
 	color: #428BCA;
 }
 
-#element-box {
+.box {
 	color: #428BCA;
 	width: 500px;
 	height: 500px;
@@ -49,6 +49,8 @@ p {
 	margin-top: 2%;
 	margin-bottom: 2%;
 }
+	#element-box { display:block; z-index:1; }
+	#message-box { display:none; z-index:2; }
 
 #nameField {
 	float: left;

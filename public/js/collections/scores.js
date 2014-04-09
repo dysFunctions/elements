@@ -10,11 +10,12 @@ define(function(require){
       return parseInt(model.get('score'));
     },
 
-    topTen: function(name,qScore){
-      var scoresArray = [{name:name, score:qScore}];
-      this.forEach(function(model){
+    topTen: function(){
+      var scoresArray = [];
+      this.models.forEach(function(model){
         scoresArray.push(model.attributes);
       });
+      scoresArray = _.pluck(scoresArray,'score');
       return scoresArray;
     }
 

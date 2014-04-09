@@ -6,7 +6,8 @@ define(function (require){
 		el: '#container',
 
 		events: {
-			"click #submit": "testFunc"
+			"click #submit": "testFunc",
+			'keypress #nameInput, #symbolInput' : 'checkForEnter'
 		},
 
 		randIndex: 0,
@@ -17,21 +18,22 @@ define(function (require){
 
 		initialize: function(options){
 			this.collection2 = options.collection2;
+			this.player = prompt("Please enter your name: ");
 			this.render();
 		},
 
 		render: function(){
 			this.count++;
-			if (this.count > 1){
+			if (this.count > 10){
 				alert("Game Over!");
-				this.collection2.trigger('newScore',{name: "James", score: Math.floor(Math.random()*11)});
+				this.collection2.trigger('newScore',{name: this.player, score: this.score});
+				this.player = prompt("Please enter your name: ");
 				this.score = 0;
 				this.count = 0;
 				this.render();
 			} else {
 			var randIndex = Math.floor(Math.random()*this.collection.length)
 			this.randIndex = randIndex;
-
 			if(Math.random() > 0.5){
 				this.$el.find("#element-box").find("#name").toggleClass('inactive');
 				this.$el.find("#element-box").find("#nameInput").toggleClass('inactive');
@@ -46,6 +48,12 @@ define(function (require){
 			this.$el.find("#score").html(this.score+"/10");
 			}
 		},
+
+		checkForEnter: function (event) {
+      if (event.charCode === 13) {
+				this.testFunc();
+			}
+    },
 
 		testFunc: function(){
 			var submission = '';
@@ -71,6 +79,9 @@ define(function (require){
 
 			if(submission === ''){
 				alert('Please enter valid fields');
+				// var e = new ErrorView();
+				// e.message = "Please enter valid fields.";
+				// e.render();
 			}
 			else if (submission === correctAnswer){
 				alert('Congratulations! That is correct!');
@@ -90,10 +101,3 @@ define(function (require){
 
 	return ElementView;
 });
-
-
-// PUT request is idempotent -- calling it multiple times does same as calling it one time.
-// don't want to use PUT to create a new resource on server.  Want to use POST to post data
-// without a particular ID
-// Create triggers a POST and save() triggers a PUT
-// Look at Backbonejs.org under sync for mappings of different events.

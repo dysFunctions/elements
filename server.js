@@ -3,7 +3,7 @@ var fs = require('fs');
 var url = require('url');
 var mime = require('mime');
 var path = require('path');
-var db = require('orchestrate')('insert key here');
+var db = require('orchestrate')('Insert Key Here');
 
 http.createServer(function(req, res){
 	var pathname = url.parse(req.url, true).pathname;
@@ -46,7 +46,6 @@ function scoresData(req, res){
 		if(req.method === "GET"){
 		db.get('topTen','scoresArray').then(function(result){
 			res.setHeader('Content-Type', mime.lookup('json'));
-		 console.log(result.body);
 			res.end(JSON.stringify(result.body));
 		}).fail(function (err){
 			console.log(err);
