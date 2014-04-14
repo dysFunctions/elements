@@ -2,25 +2,34 @@
 <html>
 <head>
 	<meta charset='utf-8'>
-	<title>Elements Game</title>
+	<title>TinyTable</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="css/main.css"rel="stylesheet" type="text/css" >
 	<script src="js/lib/require.js" data-main="js/main" type="text/javascript" charset="utf-8"></script>
 </head>
+
 <body>
 	<div id = "container">
-		<h1>Elements Game</h1>
+		<h1>TinyTable</h1>
 
 			<ul class="nav nav-tabs">
 				<li class="active"><a href="#home" data-toggle="tab">Welcome</a></li>
-				<li><a href="#quiz" data-toggle="tab">Elements Quiz</a></li>
+				<li><a href="#quiz" data-toggle="tab">Quiz</a></li>
 				<li><a href="#highScores" data-toggle="tab">High Scores</a></li>
 				<li><a href="#periodicTable" data-toggle="tab">Periodic Table</a></li>
+				<li><a href="#periodicTable" data-toggle="tab">About TinyTable</a></li>
 			</ul>
 
 			<div class="tab-content">
+			<!-- Home Tab Content -->
 				<div class="tab-pane fade in active" id="home">
-					<h4>Welcome screen</h4>
+					<h2>Welcome to TinyTable!<br><br> Test your knowledge of the periodic table.  You will be quizzed on element names and their id's. <br><br> Enter your name to begin!</h2>
+					
+					<div class="form-group">
+				    <label for="userName"></label>
+				    <input type="name" class="form-control" id="userName" placeholder="Enter name">
+				  </div>
+					
 				</div>
 
 
@@ -33,7 +42,7 @@
 								<input type = "text" placeholder="Enter Element Name" id="nameInput">
 							</div>
 							<div class="form-group" id="numField">
-								<h5>Atomic number: <span id="atNum"></span></h5>
+								<h3>Atomic number: <span id="atNum"></span></h3>
 							</div>
 							<div class="form-group" id="symField">
 								<h1 id="symbol">...</h1>
