@@ -18,7 +18,7 @@ define(function (require){
 
 		initialize: function(options){
 			this.collection2 = options.collection2;
-			this.player = prompt("Please enter your name: ");
+			/*this.player = prompt("Please enter your name: "); */
 			this.render();
 		},
 
@@ -27,7 +27,7 @@ define(function (require){
 			if (this.count > 10){
 				alert("Game Over!");
 				this.collection2.trigger('newScore',{name: this.player, score: this.score});
-				this.player = prompt("Please enter your name: ");
+				/*this.player = prompt("Please enter your name: "); */
 				this.score = 0;
 				this.count = 0;
 				this.render();

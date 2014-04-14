@@ -1,5 +1,5 @@
 body {
-	background-color: #000
+	background-color: #cccccc;
 }
 
 button, input, optgroup, select, textarea {
@@ -57,7 +57,8 @@ p {
 }
 
 #numField {
-	float:right;
+	position: absolute: 
+	margin
 }
 
 #symbol {
