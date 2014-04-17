@@ -1,5 +1,5 @@
 html {
-	background: url(/images/blueRust.jpg);
+	background-image: url('/../images/blueRust.jpg');
 }
 
 button, input, optgroup, select, textarea {

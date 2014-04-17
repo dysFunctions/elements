@@ -3,7 +3,7 @@ var fs = require('fs');
 var url = require('url');
 var mime = require('mime');
 var path = require('path');
-var db = require('orchestrate')('Insert Key Here');
+var db = require('orchestrate')('24512bf3-f66d-40fd-bc7e-144753e2f84e');
 
 http.createServer(function(req, res){
 	var pathname = url.parse(req.url, true).pathname;
