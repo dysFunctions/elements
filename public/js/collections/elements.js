@@ -1,8 +1,8 @@
 define(function(require){
-	var Backbone = require('backbone');
+	var Thorax = require('thorax');
 	var Element = require ('models/element')
 
-	var Elements = Backbone.Collection.extend({
+	var Elements = Thorax.Collection.extend({
 		model: Element
 	});
 

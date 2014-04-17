@@ -1,8 +1,8 @@
 define(function(require){
 
-    var Backbone = require('backbone');
+    var Thorax = require('thorax');
 
-    var ScoresView = Backbone.View.extend({
+    var ScoresView = Thorax.View.extend({
       el: "#scores-table",
 
       initialize: function(){
