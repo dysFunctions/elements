@@ -1,8 +1,8 @@
 define(function(require){
-  var Backbone = require('backbone');
+  var Thorax = require('thorax');
   var Score = require ('models/score')
 
-  var Scores = Backbone.Collection.extend({
+  var Scores = Thorax.Collection.extend({
     url: '/api/scores',
     model: Score,
 

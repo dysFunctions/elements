@@ -1,7 +1,7 @@
 define(function (require){
-	var Backbone = require('backbone');
+	var Thorax = require('thorax');
 
-	var ElementView = Backbone.View.extend({
+	var ElementView = Thorax.View.extend({
 
 		el: '#container',
 

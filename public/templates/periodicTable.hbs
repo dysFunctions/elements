@@ -1,0 +1,27 @@
+<div class="panel panel-default container">
+	<div class="panel-body">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Atomic Number</th>
+					<th>Element Name</th>
+					<th>Element ID</th>
+					<th>Atomic Weight></th>
+				</tr>
+			</thead>
+
+		
+			
+			{{#collection tag='tbody'}}
+				<tr>
+					<td>{{atomicNumber}}</td>
+					<td>{{name}}</td>
+					<td>{{symbol}}</td>
+					<td>{{atomicWeight}}</td>
+				</tr>
+			{{/collection}}
+			
+			
+		</table>
+	</div>
+</div>

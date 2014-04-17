@@ -1,11 +1,12 @@
 define(function (require){
 
-    var Backbone = require('backbone');
+    var Thorax = require('thorax');
     var Element = require('models/element');
     var ElementView = require('views/elementView');
     var Elements = require('collections/elements');
     var Scores = require('collections/scores')
     var ScoresView = require('views/scoresView');
+    var TableView = require('views/tableView');
     var $ = require('jquery');
 
     $(function(){
@@ -42,7 +43,13 @@ define(function (require){
 
 
              var elementView = new ElementView({collection: elements, collection2: scores});
+
+            var tableView = new TableView({
+              collection: elements
+            });
           });
+
+           
         });
 
 
