@@ -1,5 +1,5 @@
-body {
-	background-color: #cccccc;
+html {
+	background-image: url('/../images/blueRust.jpg');
 }
 
 button, input, optgroup, select, textarea {
