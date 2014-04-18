@@ -9,8 +9,20 @@
 </head>
 
 <body>
+
+
+
 	<div id = "container">
 		<h1>TinyTable</h1>
+
+			<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-sm">
+					<div class="modal-content">
+						<h3></h3>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Continue</button>
+					</div>
+				</div>
+			</div>
 
 			<ul class="nav nav-tabs">
 				<li class="active"><a href="#home" data-toggle="tab">Welcome</a></li>
@@ -24,17 +36,19 @@
 			<!-- Home Tab Content -->
 				<div class="tab-pane fade in active" id="home">
 					<h2>Welcome to TinyTable!<br><br> Test your knowledge of the periodic table.  You will be quizzed on element names and their id's. <br><br> Enter your name to begin!</h2>
-					
+
 					<div class="form-group">
 				    <label for="userName"></label>
 				    <input type="name" class="form-control" id="userName" placeholder="Enter name">
 				  </div>
-					
+
 				</div>
 
 
 				<div class="tab-pane fade" id="quiz">
+
 					<div id="element-box" class="box">
+
 						<form role="form">
 							<div class="form-group" id="nameField">
 								<label for="element-name">Element Name: </label>
@@ -76,6 +90,11 @@
 					<div class="tab-pane fade" id="periodicTable">
 						<h4>I am the periodic table</h4>
 					</div>
+
+
+
+
+
 
 					<div class="tab-pane fade" id="about">
 						<h4>Stuff about us</h4>

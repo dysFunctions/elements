@@ -1,0 +1,27 @@
+{
+  "name": "TinyTable",
+  "version": "0.0.0",
+  "description": "Portland Code School - Winter Fullstack Javascript Class - Capstone Project",
+  "main": "server.js",
+  "dependencies": {
+    "kew": "~0.4.0",
+    "mime": "~1.2.11",
+    "parse-link-header": "~0.1.0",
+    "orchestrate": "~0.0.8",
+    "request": "~2.34.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dysFunctions/elements.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/dysFunctions/elements/issues"
+  }
+}

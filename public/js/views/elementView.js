@@ -25,7 +25,7 @@ define(function (require){
 		render: function(){
 			this.count++;
 			if (this.count > 10){
-				alert("Game Over!");
+				this.$('.modal').find('h3').html('Game Over!');
 				this.collection2.trigger('newScore',{name: this.player, score: this.score});
 				/*this.player = prompt("Please enter your name: "); */
 				this.score = 0;
@@ -79,19 +79,18 @@ define(function (require){
 
 			if(submission === ''){
 				alert('Please enter valid fields');
-				// var e = new ErrorView();
-				// e.message = "Please enter valid fields.";
-				// e.render();
 			}
 			else if (submission === correctAnswer){
-				alert('Congratulations! That is correct!');
+				this.$('.modal').find('h3').html('Congratulations! That is correct!');
+				this.$('.modal').modal();
 				this.$("#nameInput").val('');
 				this.$("#symbolInput").val('');
 				this.score++;
 				this.render();
 			} else {
 				var rightAnswer = correctAnswer[0].toUpperCase() + correctAnswer.slice(1);
-				alert('Sorry, that is incorrect. Correct answer is '+ rightAnswer);
+				this.$('.modal').find('h3').html('Sorry, that is incorrect. Correct answer is <br><strong>'+ rightAnswer+'</strong>');
+				this.$('.modal').modal();
 				this.$("#nameInput").val('');
 				this.$("#symbolInput").val('');
 				this.render();
