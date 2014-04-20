@@ -1,5 +1,5 @@
 body {
-	background-image: url('http://upload.wikimedia.org/wikipedia/commons/a/af/Metal_Foam_in_Scanning_Electron_Microscope,_magnification_10x.GIF');
+	/* background-image: url('http://upload.wikimedia.org/wikipedia/commons/a/af/Metal_Foam_in_Scanning_Electron_Microscope,_magnification_10x.GIF');
 	/*background-image: url('/../images/blueRust.jpg');*/
 	/*background-image: url('../images/metal.jpg');*/
 }
@@ -38,7 +38,6 @@ p {
 	margin-right: 20%;
 	margin-left: 20%;
 	color: #428BCA;
-	background-color: rgba(0,0,0,.25);
 }
 
 .box {
