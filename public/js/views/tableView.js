@@ -10,12 +10,6 @@ define (function (require) {
 		initialize: function () {
 			this.render();
 		}, 
-
-		/*render: function () {
-			this.$el.html(this.template);
-		
-		},
-		*/
 		
 		template: template
 		
