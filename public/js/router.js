@@ -2,48 +2,59 @@ define(function (require) {
 	var Backbone = require('backbone');
 
 	var Router = Backbone.Router.extend({
-		initialize: function () {
-			this.displayScores();
-			// this.elementView = options.quiz;
-			// this.scoresView = options.highScores;
-			// this.tableView = options.periodicTable;
-			// this.about = options.about;
+
+		initialize: function (options) {
+			this.displayHome();
 		},
 
 		routes: {
+			'home' : 'displayHome',
 			'quiz' : 'displayQuiz',
 			'highScores' : 'displayScores',
 			'periodicTable' : 'displayPeriodicTable',
 			'about' : 'displayAbout'
 		},
 
+		displayHome: function () {
+		      console.log("this is the quiz");
+		      $("#home").show();
+		      $("#quiz").hide();
+		      $("#highScores").hide();
+		      $("#periodicTable").hide();
+		      $("#about").hide();
+		},
+
 		displayQuiz: function () {
-			this.elementView.$el.show();
-			this.scoresView.$el.hide();
-			this.tableView.$el.hide();
-			this.about.$el.hide();
+		      console.log("this is the quiz");
+		      $("#home").hide();
+		      $("#quiz").show();
+		      $("#highScores").hide();
+		      $("#periodicTable").hide();
+		      $("#about").hide();
 		},
 
 		displayScores: function () {
-			console.log("this is the quiz");
-			// this.scoresView.$el.hide();
-			// this.elementView.$el.hide();
-			// this.tableView.$el.hide();
-			$("#about").show();
+			  $("#home").hide();
+		      $("#quiz").hide();
+		      $("#highScores").show();
+		      $("#periodicTable").hide();
+		      $("#about").hide();
 		},
 
 		displayPeriodicTable: function () {
-			this.tableView.$el.show();
-			this.elementView.$el.hide();
-			this.scoresView.$el.hide();
-			this.about.$el.hide();
+			  $("#home").hide();
+		      $("#quiz").hide();
+		      $("#highScores").hide();
+		      $("#periodicTable").show();
+		      $("#about").hide();
 		},
 
 		displayAbout: function () {
-			this.about.$el.show();
-			this.quiz.$el.hide();
-			this.highScores.$el.hide();
-			this.periodicTable.$el.hide();
+			  $("#home").hide();
+		      $("#quiz").hide();
+		      $("#highScores").hide();
+		      $("#periodicTable").hide();
+		      $("#about").show();
 		}
 	});
 	return Router;
