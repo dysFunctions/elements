@@ -52,7 +52,8 @@
 				</div>
 
 
-				<div class="tab-pane fade" id="quiz">
+				<div class="tab-pane fade" id="quiz">		
+					<button class="btn btn-default" id="score">...</button>
 					<div id="element-box" class="box">
 						<form role="form">
 							<div class="form-group" id="nameField">
@@ -70,30 +71,32 @@
 							</div>
 						</form>
 					</div>
+					<button type="submit" class="btn btn-default" id="submit">Submit</button>
 					<!-- /element-box -->
 					<div id="message-box" class="box"></div>
-					<button type="submit" class="btn btn-default" id="submit">Submit</button>
-							<button class="btn btn-default" id="score">...</button>
+		
 				</div>
 
 					<div class="tab-pane fade" id="highScores">
-						<h4>High Scores</h4>
-						<div id="scores-table">
+						<h3>High Scores</h3>
+						<div class="col-xs-0 col-sm-2"></div>
+						<div class="col-xs-12 col-sm-8" id="scores-table">
 							<table class="table">
 								<thead>
 									<tr>
-										<th>Name</th>
-										<th>Score</th>
+										<th >Name</th>
+										<th >Score</th>
 									</tr>
 								</thead>
 								<tbody>
 								</tbody>
 							</table>
 						</div>
+						<div class="col-xs-0 col-sm-2"></div>
 					</div>
 
 					<div class="tab-pane fade" id="periodicTable">
-						<h4>I am the periodic table</h4>
+					
 					</div>
 
 					<div class="tab-pane fade" id="about">
