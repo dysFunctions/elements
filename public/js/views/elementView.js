@@ -28,7 +28,7 @@ define(function (require){
 			if (this.count > 10){
 				this.$('.modal').find('h3').html('Game Over!');
 				this.collection2.trigger('newScore',{name: this.player, score: this.score});
-				// this.player = prompt("Please enter your name: ");
+				this.player = alert("Game Over! Click ok to try again."); // Make into modal
 				this.score = 0;
 				this.count = 0;
 				this.render();
@@ -46,7 +46,7 @@ define(function (require){
 			this.$el.find("#element-box").find("#symbol").html(this.collection.at(randIndex).attributes.symbol);
 			this.$el.find("#element-box").find("#atomic-weight").html(this.collection.at(randIndex).attributes.atomicWeight);
 			this.$el.find("#element-box").find("#atNum").html(this.collection.at(randIndex).attributes.atomicNumber);
-			this.$el.find("#score").html(this.score+"/10");
+			this.$el.find("#score").html(this.score+"/"+this.count);
 			}
 		},
 
