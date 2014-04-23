@@ -7,7 +7,7 @@ define(function (require){
 
 		events: {
 			"click #submit": "testFunc",
-			"click button": "render",
+			"click .modal-content button": "render",
 			'keypress #nameInput, #symbolInput' : 'checkForEnter'
 		},
 
@@ -24,8 +24,7 @@ define(function (require){
 		},
 
 		render: function(){
-			this.count++;
-			if (this.count > 10){
+			if (this.count >= 10){
 				this.$('.modal').find('h3').html('Game Over!');
 				this.collection2.trigger('newScore',{name: this.player, score: this.score});
 				this.player = alert("Game Over! Click ok to try again."); // Make into modal
@@ -62,6 +61,8 @@ define(function (require){
 			var submission = '';
 			var activeDiv = '';
 			var correctAnswer = '';
+			this.count++;
+
 			if (this.$("#nameInput").hasClass('inactive')){
 				activeDiv = "#symbolInput";
 				correctAnswer = this.collection.at(this.randIndex).attributes.symbol;
@@ -85,7 +86,7 @@ define(function (require){
 			}
 			else if (submission === correctAnswer){
 				this.$('.modal').find('h3').html('Congratulations! That is correct!');
-				this.$('.modal').modal();
+				this.$('.modal').modal({backdrop:'static', keyboard: false});
 				this.score++;
 				this.$('.modal').find('button').click(function(e){
 					e.preventDefault();
@@ -95,7 +96,7 @@ define(function (require){
 		} else {
 				var rightAnswer = correctAnswer[0].toUpperCase() + correctAnswer.slice(1);
 				this.$('.modal').find('h3').html('Sorry, that is incorrect. Correct answer is <br><strong>'+ rightAnswer+'</strong>');
-				this.$('.modal').modal();
+				this.$('.modal').modal({backdrop:'static',keyboard:false});
 				this.$('.modal').find("button").click(function(e){
 					e.preventDefault();
 					self.$("#nameInput").val('');

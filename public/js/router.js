@@ -16,7 +16,6 @@ define(function (require) {
 		},
 
 		displayHome: function () {
-		      console.log("this is the quiz");
 		      $("#home").show();
 		      $("#quiz").hide();
 		      $("#highScores").hide();
@@ -25,7 +24,6 @@ define(function (require) {
 		},
 
 		displayQuiz: function () {
-		      console.log("this is the quiz");
 		      $("#home").hide();
 		      $("#quiz").show();
 		      $("#highScores").hide();
