@@ -4,19 +4,19 @@
 				
 				<thead>
 					<tr>
-						<th>Atomic Number</th>
-						<th>Element Name</th>
-						<th>Element ID</th>
-						<th>Atomic Weight></th>
+						<th class="col-xs-1">Atomic Number</th>
+						<th class="col-xs-2">Element Name</th>
+						<th class="col-xs-2">Element ID</th>
+						<th class="col-xs-2">Atomic Weight</th>
 					</tr>
 				</thead>		
 
 				{{#collection tag='tbody'}}
 					<tr>
-						<td>{{atomicNumber}}</td>
-						<td>{{name}}</td>
-						<td>{{symbol}}</td>
-						<td>{{atomicWeight}}</td>
+						<td class="col-xs-1">{{atomicNumber}}</td>
+						<td class="col-xs-2">{{name}}</td>
+						<td class="col-xs-2">{{symbol}}</td>
+						<td class="col-xs-2">{{atomicWeight}}</td>
 					</tr>
 				{{/collection}}
 						
