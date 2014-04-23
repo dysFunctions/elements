@@ -7,6 +7,7 @@ define(function (require){
     var Scores = require('collections/scores')
     var ScoresView = require('views/scoresView');
     var TableView = require('views/tableView');
+    var Router = require('router');
     var $ = require('jquery');
 
     $(function(){
@@ -50,6 +51,15 @@ define(function (require){
           });
 
         });
+
+      var router = new Router({
+        quiz: elementView,
+        highScores: scoresView,
+        periodicTable: tableView,
+        about: about
+      });
+
+      Backbone.history.start();
 
 
 
