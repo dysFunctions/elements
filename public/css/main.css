@@ -10,20 +10,22 @@ button, input, optgroup, select, textarea {
 	margin:0;
 }
 
-table {
-	width: 800px;
-	text-align: left;
-	border-collapse: collapse;
-}
+/* Scores Table ================================================= */
 
 #scores-table {
 	margin-top: 25px;
-	border-top: 1px solid #428BCA;
+	
 }
 
-table td,th {
-	border: 1px solid #428BCA;
-	width: 50%;
+h3 {
+	text-align: center;
+}
+
+#score {
+	float: right;
+	display: block;
+	margin-right: 15px;
+	clear: left;
 }
 
 p {
