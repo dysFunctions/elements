@@ -10,7 +10,6 @@
 
 <body>
 	<div id = "container">
-
 		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-sm">
 				<div class="modal-content">
@@ -20,73 +19,44 @@
 			</div>
 		</div>
 
-<!--navigation bar-->
-	<nav class="navbar navbar-default" role="navigation">
-	  <div class="container-fluid">
-		<!-- creates collapsed navbar button -->
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	      <a class="navbar-brand hidden-sm hidden-md hidden-lg" href="#home" data-toggle="tab">TinyTable</a>
-	    </div>
+	<div class="container">
+		<a href="#home">TinyTable</a>
+		<a href="#quiz">Quiz</a>
+		<a href="#highScores">Scores</a>
+		<a href="#periodicTable">Periodic Table</a>
+		<a href="#about">About</a>
 
-	    <!-- creates navbar in sm, md, lg views -->
-			<a class="navbar-brand hidden-xs" href="#home" data-toggle="tab">TinyTable</a>
-	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	      	<ul class="nav nav-tabs navbar-right">
-					<li><a href="#quiz" data-toggle="tab">Quiz</a></li>
-					<li><a href="#highScores" data-toggle="tab">Scores</a></li>
-					<li><a href="#periodicTable" data-toggle="tab">Periodic Table</a></li>
-					<li><a href="#about" data-toggle="tab">About</a></li>
-				</ul>
-			</div>
-	  </div>
-	</nav>
+		<div id="home">
+			<h2>Welcome to TinyTable!<br><br> Test your knowledge of the periodic table.  You will be quizzed on element names and their id's.</h2>
+		</div>
 
 
-			<div class="tab-content">
-			<!-- Home Tab Content -->
-				<div class="tab-pane fade in active" id="home">
-					<h2>Welcome to TinyTable!<br><br> Test your knowledge of the periodic table.  You will be quizzed on element names and their id's. <br><br> Enter your name to begin!</h2>
-
+		<div id="quiz" style="display: none">
+			<button class="btn btn-default" id="score">...</button>
+			<div id="element-box" class="box">
+				<form role="form">
 					<div class="form-group">
-				    <label for="userName"></label>
-				    <input type="name" class="form-control" id="userName" placeholder="Enter name">
-				  </div>
-
-				</div>
-
-
-				<div class="tab-pane fade" id="quiz">
-					<button class="btn btn-default" id="score">...</button>
-					<div id="element-box" class="box">
-						<form role="form">
-							<div class="form-group">
-								<label for="element-name" >Element Name: </label>
-								<span id="name" class="inactive">...</span>
-								<input type = "text" placeholder="Enter Element Name" id="nameInput">
-							</div>
-							<div class="form-group" id="numField">
-								<h3>Atomic number: <span id="atNum"></span></h3>
-							</div>
-							<div class="form-group" id="symField">
-								<h1 id="symbol">...</h1>
-								<input type="text" placeholder="Enter Symbol" id="symbolInput" class="inactive">
-								<p>Atomic weight: <span id="atomic-weight">...</span> g/mol</p>
-							</div>
-						</form>
+						<label for="element-name" >Element Name: </label>
+						<span id="name" class="inactive">...</span>
+						<input type = "text" placeholder="Enter Element Name" id="nameInput">
 					</div>
-					<button type="submit" class="btn btn-default" id="submit">Submit</button>
-					<!-- /element-box -->
-					<div id="message-box" class="box"></div>
+					<div class="form-group" id="numField">
+						<h3>Atomic number: <span id="atNum"></span></h3>
+					</div>
+					<div class="form-group" id="symField">
+						<h1 id="symbol">...</h1>
+						<input type="text" placeholder="Enter Symbol" id="symbolInput" class="inactive">
+						<p>Atomic weight: <span id="atomic-weight">...</span> g/mol</p>
+					</div>
+				</form>
+			</div>
+			<button type="submit" class="btn btn-default" id="submit">Submit</button>
+			<!-- /element-box -->
+			<div id="message-box" class="box"></div>
 
-				</div>
+		</div>
 
-					<div class="tab-pane fade" id="highScores">
+					<div id="highScores" style="display: none">
 						<h3>High Scores</h3>
 						<div class="col-xs-0 col-sm-2"></div>
 						<div class="col-xs-12 col-sm-8" id="scores-table">
@@ -104,11 +74,11 @@
 						<div class="col-xs-0 col-sm-2"></div>
 					</div>
 
-					<div class="tab-pane fade" id="periodicTable">
+					<div id="periodicTable" style="display: none">
 
 					</div>
 
-					<div class="tab-pane fade" id="about">
+					<div id="about" style="display: none">
 						<h4>Stuff about us</h4>
 					</div>
 			</div>

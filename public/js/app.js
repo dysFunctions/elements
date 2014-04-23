@@ -12,7 +12,7 @@ define(function (require){
 
     $(function(){
         var app = {};
-
+        var scoresView;
         var elements = new Elements();
         var scores = new Scores();
 
@@ -21,7 +21,7 @@ define(function (require){
             scores.add(model);
           })
 
-           var scoresView = new ScoresView({collection:scores});
+           scoresView = new ScoresView({collection:scores});
         }).done(function(){
           $.get('api/data', function(data){
 
@@ -48,18 +48,28 @@ define(function (require){
             var tableView = new TableView({
               collection: elements
             });
+
+            var router = new Router({
+              quiz: elementView,
+              highScores: scoresView,
+              periodicTable: tableView,
+              about: about
+            });
+
+            Backbone.history.start();
+
           });
 
         });
 
-      var router = new Router({
-        quiz: elementView,
-        highScores: scoresView,
-        periodicTable: tableView,
-        about: about
-      });
-
-      Backbone.history.start();
+      // var router = new Router({
+      //   quiz: elementView,
+      //   highScores: scoresView,
+      //   periodicTable: tableView,
+      //   about: about
+      // });
+      //
+      // Backbone.history.start();
 
 
 
