@@ -14,7 +14,7 @@ button, input, optgroup, select, textarea {
 
 #scores-table {
 	margin-top: 25px;
-	
+
 }
 
 h3 {
@@ -61,7 +61,7 @@ p {
 }
 
 #numField {
-	position: absolute: 
+	position: absolute:
 
 }
 
@@ -88,4 +88,7 @@ p {
 }
 
 
-
+.modal {
+	top: 35%;
+	text-align: center;
+}

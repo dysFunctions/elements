@@ -7,6 +7,7 @@ define(function (require){
 
 		events: {
 			"click #submit": "testFunc",
+			"click button": "render",
 			'keypress #nameInput, #symbolInput' : 'checkForEnter'
 		},
 
@@ -24,10 +25,11 @@ define(function (require){
 
 		render: function(){
 			this.count++;
+			console.log(this.score);
 			if (this.count > 10){
-				alert("Game Over!");
+				this.$('.modal').find('h3').html('Game Over!');
 				this.collection2.trigger('newScore',{name: this.player, score: this.score});
-				/*this.player = prompt("Please enter your name: "); */
+				// this.player = prompt("Please enter your name: ");
 				this.score = 0;
 				this.count = 0;
 				this.render();
@@ -56,6 +58,7 @@ define(function (require){
     },
 
 		testFunc: function(){
+			var self = this;
 			var submission = '';
 			var activeDiv = '';
 			var correctAnswer = '';
@@ -79,22 +82,25 @@ define(function (require){
 
 			if(submission === ''){
 				alert('Please enter valid fields');
-				// var e = new ErrorView();
-				// e.message = "Please enter valid fields.";
-				// e.render();
 			}
 			else if (submission === correctAnswer){
-				alert('Congratulations! That is correct!');
-				this.$("#nameInput").val('');
-				this.$("#symbolInput").val('');
+				this.$('.modal').find('h3').html('Congratulations! That is correct!');
+				this.$('.modal').modal();
 				this.score++;
-				this.render();
-			} else {
+				this.$('.modal').find('button').click(function(e){
+					e.preventDefault();
+					self.$("#nameInput").val('');
+					self.$("#symbolInput").val('');
+				});
+		} else {
 				var rightAnswer = correctAnswer[0].toUpperCase() + correctAnswer.slice(1);
-				alert('Sorry, that is incorrect. Correct answer is '+ rightAnswer);
-				this.$("#nameInput").val('');
-				this.$("#symbolInput").val('');
-				this.render();
+				this.$('.modal').find('h3').html('Sorry, that is incorrect. Correct answer is <br><strong>'+ rightAnswer+'</strong>');
+				this.$('.modal').modal();
+				this.$('.modal').find("button").click(function(e){
+					e.preventDefault();
+					self.$("#nameInput").val('');
+					self.$("#symbolInput").val('');
+				 });
 			}
 		}
 	});
