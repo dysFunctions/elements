@@ -6,10 +6,13 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="css/main.css"rel="stylesheet" type="text/css" >
 	<script src="js/lib/require.js" data-main="js/main" type="text/javascript" charset="utf-8"></script>
+	<link rel="icon" href="cube_molecule.ico" type="image/x-icon"> 
+	<link rel="shortcut icon" href="cube_molecule.ico" />
 </head>
 
 <body>
 	<div id = "container">
+		
 		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-sm">
 				<div class="modal-content">
@@ -19,13 +22,40 @@
 			</div>
 		</div>
 
-	<div class="container">
+		<!--navigation bar-->
+	<nav class="navbar navbar-default" role="navigation">
+	  <div class="container-fluid">
+		<!-- creates collapsed navbar button -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand hidden-sm hidden-md hidden-lg" href="#home" data-toggle="tab">TinyTable</a>
+	    </div>
+
+	    <!-- creates navbar in sm, md, lg views -->
+			<a class="navbar-brand hidden-xs" href="#home">TinyTable</a>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      	<ul class="nav nav-tabs navbar-right">
+					<li><a href="#quiz">Quiz</a></li>
+					<li><a href="#highScores">Scores</a></li>
+					<li><a href="#periodicTable">Periodic Table</a></li>
+					<li><a href="#about">About</a></li>
+				</ul>
+			</div>
+	  </div>
+	</nav>
+	
+	<!--<div class="container">
 		<a href="#home">TinyTable</a>
 		<a href="#quiz">Quiz</a>
 		<a href="#highScores">Scores</a>
 		<a href="#periodicTable">Periodic Table</a>
 		<a href="#about">About</a>
-
+-->
 		<div id="home">
 			<h2>Welcome to TinyTable!<br><br> Test your knowledge of the periodic table.  You will be quizzed on element names and their id's.</h2>
 		</div>
