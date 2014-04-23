@@ -48,6 +48,7 @@ define(function (require){
 			this.$el.find("#element-box").find("#atNum").html(this.collection.at(randIndex).attributes.atomicNumber);
 			this.$el.find("#score").html(this.score+"/"+this.count);
 			}
+			$('input').focus();
 		},
 
 		checkForEnter: function (event) {

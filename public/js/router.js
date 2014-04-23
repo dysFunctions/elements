@@ -31,6 +31,7 @@ define(function (require) {
 		      $("#highScores").hide();
 		      $("#periodicTable").hide();
 		      $("#about").hide();
+		      $('input').focus();
 		},
 
 		displayScores: function () {
