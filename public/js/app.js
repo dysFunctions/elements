@@ -50,7 +50,6 @@ define(function (require){
             });
           });
 
-           
         });
 
       var router = new Router({

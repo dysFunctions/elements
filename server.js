@@ -5,6 +5,8 @@ var mime = require('mime');
 var path = require('path');
 var db = require('orchestrate')('24512bf3-f66d-40fd-bc7e-144753e2f84e');
 
+var port = process.env.PORT || 8080;
+
 http.createServer(function(req, res){
 	var pathname = url.parse(req.url, true).pathname;
 
@@ -21,7 +23,7 @@ http.createServer(function(req, res){
 			staticFileHandler(pathname, res);
 		}
 
-}).listen(8080);
+}).listen(port);
 
 
 
