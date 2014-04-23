@@ -62,15 +62,6 @@ define(function (require){
 
         });
 
-      // var router = new Router({
-      //   quiz: elementView,
-      //   highScores: scoresView,
-      //   periodicTable: tableView,
-      //   about: about
-      // });
-      //
-      // Backbone.history.start();
-
 
 
         function createElement (elementObject) {

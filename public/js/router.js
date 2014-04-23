@@ -2,11 +2,12 @@ define(function (require) {
 	var Backbone = require('backbone');
 
 	var Router = Backbone.Router.extend({
-		initialize: function (options) {
-			this.elementView = options.quiz;
-			this.scoresView = options.highScores;
-			this.tableView = options.periodicTable;
-			this.about = options.about;
+		initialize: function () {
+			this.displayScores();
+			// this.elementView = options.quiz;
+			// this.scoresView = options.highScores;
+			// this.tableView = options.periodicTable;
+			// this.about = options.about;
 		},
 
 		routes: {
@@ -17,7 +18,6 @@ define(function (require) {
 		},
 
 		displayQuiz: function () {
-      console.log("this is the quiz");
 			this.elementView.$el.show();
 			this.scoresView.$el.hide();
 			this.tableView.$el.hide();
@@ -25,10 +25,11 @@ define(function (require) {
 		},
 
 		displayScores: function () {
-			this.scoresView.$el.show();
-			this.elementView.$el.hide();
-			this.tableView.$el.hide();
-			this.about.$el.hide();
+			console.log("this is the quiz");
+			// this.scoresView.$el.hide();
+			// this.elementView.$el.hide();
+			// this.tableView.$el.hide();
+			$("#about").show();
 		},
 
 		displayPeriodicTable: function () {
