@@ -25,7 +25,6 @@ define(function (require){
 
 		render: function(){
 			this.count++;
-			console.log(this.score);
 			if (this.count > 10){
 				this.$('.modal').find('h3').html('Game Over!');
 				this.collection2.trigger('newScore',{name: this.player, score: this.score});
