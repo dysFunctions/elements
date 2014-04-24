@@ -26,13 +26,12 @@ define(function(require){
 
       render: function(){
         var body = '';
+        var self = this;
         this.$el.find("tbody").html('');
         this.collection.each(function(model){
-          body += '<tr><td>'+model.attributes.name+'</td><td>'+model.attributes.score+'</td></tr>';
-          return body;
+          self.$el.find("tbody").prepend('<tr><td>'+model.attributes.name+'</td><td>'+model.attributes.score+'</td></tr>');
         });
 
-        this.$el.find("tbody").append(body);
       },
 
       scoreSync:function(params){

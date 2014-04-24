@@ -2,6 +2,7 @@ define(function (require) {
 	var Backbone = require('backbone');
 
 	var Router = Backbone.Router.extend({
+
 		initialize: function (options) {
 			this.displayHome();
 		},
@@ -15,45 +16,44 @@ define(function (require) {
 		},
 
 		displayHome: function () {
-      console.log("this is the quiz");
-      $("#home").show();
-      $("#quiz").hide();
-      $("#highScores").hide();
-      $("#periodicTable").hide();
-      $("#about").hide();
+		      $("#home").show();
+		      $("#quiz").hide();
+		      $("#highScores").hide();
+		      $("#periodicTable").hide();
+		      $("#about").hide();
 		},
 
 		displayQuiz: function () {
-      console.log("this is the quiz");
-      $("#home").hide();
-      $("#quiz").show();
-      $("#highScores").hide();
-      $("#periodicTable").hide();
-      $("#about").hide();
+		      $("#home").hide();
+		      $("#quiz").show();
+		      $("#highScores").hide();
+		      $("#periodicTable").hide();
+		      $("#about").hide();
+		      $('input').focus();
 		},
 
 		displayScores: function () {
-			$("#home").hide();
-      $("#quiz").hide();
-      $("#highScores").show();
-      $("#periodicTable").hide();
-      $("#about").hide();
+			  $("#home").hide();
+		      $("#quiz").hide();
+		      $("#highScores").show();
+		      $("#periodicTable").hide();
+		      $("#about").hide();
 		},
 
 		displayPeriodicTable: function () {
-			$("#home").hide();
-      $("#quiz").hide();
-      $("#highScores").hide();
-      $("#periodicTable").show();
-      $("#about").hide();
+			  $("#home").hide();
+		      $("#quiz").hide();
+		      $("#highScores").hide();
+		      $("#periodicTable").show();
+		      $("#about").hide();
 		},
 
 		displayAbout: function () {
-			$("#home").hide();
-      $("#quiz").hide();
-      $("#highScores").hide();
-      $("#periodicTable").hide();
-      $("#about").show();
+			  $("#home").hide();
+		      $("#quiz").hide();
+		      $("#highScores").hide();
+		      $("#periodicTable").hide();
+		      $("#about").show();
 		}
 	});
 	return Router;
