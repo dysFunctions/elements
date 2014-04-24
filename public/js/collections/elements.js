@@ -3,7 +3,11 @@ define(function(require){
 	var Element = require ('models/element')
 
 	var Elements = Thorax.Collection.extend({
-		model: Element
+		model: Element,
+
+		comparator: function(model){
+      		return parseInt(model.get('atomicNumber'));
+    	}
 	});
 
 	return Elements;

@@ -7,7 +7,7 @@ define(function (require){
 
 		events: {
 			"click #submit": "testFunc",
-			"click button": "render",
+			"click .modal-content button": "render",
 			'keypress #nameInput, #symbolInput' : 'checkForEnter'
 		},
 
@@ -19,17 +19,16 @@ define(function (require){
 
 		initialize: function(options){
 			this.collection2 = options.collection2;
+			this.router = options.router;
 			/*this.player = prompt("Please enter your name: "); */
 			this.render();
 		},
 
 		render: function(){
-			this.count++;
-			console.log(this.score);
-			if (this.count > 10){
+			if (this.count >= 10){
 				this.$('.modal').find('h3').html('Game Over!');
 				this.collection2.trigger('newScore',{name: this.player, score: this.score});
-				// this.player = prompt("Please enter your name: ");
+				this.player = alert("Game Over! Click ok to try again."); // Make into modal
 				this.score = 0;
 				this.count = 0;
 				this.render();
@@ -47,8 +46,9 @@ define(function (require){
 			this.$el.find("#element-box").find("#symbol").html(this.collection.at(randIndex).attributes.symbol);
 			this.$el.find("#element-box").find("#atomic-weight").html(this.collection.at(randIndex).attributes.atomicWeight);
 			this.$el.find("#element-box").find("#atNum").html(this.collection.at(randIndex).attributes.atomicNumber);
-			this.$el.find("#score").html(this.score+"/10");
+			this.$el.find("#score").html(this.score+"/"+this.count);
 			}
+			$('input').focus();
 		},
 
 		checkForEnter: function (event) {
@@ -62,6 +62,8 @@ define(function (require){
 			var submission = '';
 			var activeDiv = '';
 			var correctAnswer = '';
+			this.count++;
+
 			if (this.$("#nameInput").hasClass('inactive')){
 				activeDiv = "#symbolInput";
 				correctAnswer = this.collection.at(this.randIndex).attributes.symbol;
@@ -85,7 +87,7 @@ define(function (require){
 			}
 			else if (submission === correctAnswer){
 				this.$('.modal').find('h3').html('Congratulations! That is correct!');
-				this.$('.modal').modal();
+				this.$('.modal').modal({backdrop:'static', keyboard: false});
 				this.score++;
 				this.$('.modal').find('button').click(function(e){
 					e.preventDefault();
@@ -95,7 +97,7 @@ define(function (require){
 		} else {
 				var rightAnswer = correctAnswer[0].toUpperCase() + correctAnswer.slice(1);
 				this.$('.modal').find('h3').html('Sorry, that is incorrect. Correct answer is <br><strong>'+ rightAnswer+'</strong>');
-				this.$('.modal').modal();
+				this.$('.modal').modal({backdrop:'static',keyboard:false});
 				this.$('.modal').find("button").click(function(e){
 					e.preventDefault();
 					self.$("#nameInput").val('');
