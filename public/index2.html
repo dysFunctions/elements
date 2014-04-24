@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>TinyTable</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/main.css"rel="stylesheet" type="text/css" >
+	<script src="js/lib/require.js" data-main="js/main" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+	<div id = "container">
+
+		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<h3></h3>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Continue</button>
+				</div>
+			</div>
+		</div>
+
+<!--navigation bar-->
+	<nav class="navbar navbar-default" role="navigation">
+	  <div class="container-fluid">
+		<!-- creates collapsed navbar button -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand hidden-sm hidden-md hidden-lg" href="#home" data-toggle="tab">TinyTable</a>
+	    </div>
+
+	    <!-- creates navbar in sm, md, lg views -->
+			<a class="navbar-brand hidden-xs" href="#home" data-toggle="tab">TinyTable</a>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      	<ul class="nav nav-tabs navbar-right">
+					<li><a href="#quiz" data-toggle="tab">Quiz</a></li>
+					<li><a href="#highScores" data-toggle="tab">Scores</a></li>
+					<li><a href="#periodicTable" data-toggle="tab">Periodic Table</a></li>
+					<li><a href="#about" data-toggle="tab">About</a></li>
+				</ul>
+			</div>
+	  </div>
+	</nav>
+
+
+			<div class="tab-content">
+			<!-- Home Tab Content -->
+				<div class="tab-pane fade in active" id="home">
+					<h2>Welcome to TinyTable!<br><br> Test your knowledge of the periodic table.  You will be quizzed on element names and their id's. <br><br> Enter your name to begin!</h2>
+
+					<div class="form-group">
+				    <label for="userName"></label>
+				    <input type="name" class="form-control" id="userName" placeholder="Enter name">
+				  </div>
+
+				</div>
+
+
+				<div class="tab-pane fade" id="quiz">
+					<button class="btn btn-default" id="score">...</button>
+					<div id="element-box" class="box">
+						<form role="form">
+							<div class="form-group" id="nameField">
+								<label for="element-name">Element Name: </label>
+								<span id="name" class="inactive">...</span>
+								<input type = "text" placeholder="Enter Element Name" id="nameInput">
+							</div>
+							<div class="form-group" id="numField">
+								<h3>Atomic number: <span id="atNum"></span></h3>
+							</div>
+							<div class="form-group" id="symField">
+								<h1 id="symbol">...</h1>
+								<input type="text" placeholder="Enter Symbol" id="symbolInput" class="inactive">
+								<p>Atomic weight: <span id="atomic-weight">...</span> g/mol</p>
+							</div>
+						</form>
+					</div>
+					<button type="submit" class="btn btn-default" id="submit">Submit</button>
+					<!-- /element-box -->
+					<div id="message-box" class="box"></div>
+
+				</div>
+
+					<div class="tab-pane fade" id="highScores">
+						<h3>High Scores</h3>
+						<div class="col-xs-0 col-sm-2"></div>
+						<div class="col-xs-12 col-sm-8" id="scores-table">
+							<table class="table">
+								<thead>
+									<tr>
+										<th >Name</th>
+										<th >Score</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-xs-0 col-sm-2"></div>
+					</div>
+
+					<div class="tab-pane fade" id="periodicTable">
+
+					</div>
+
+					<div class="tab-pane fade" id="about">
+						<br></br>
+							<h3>TinyTable is a responsive, educational web app designed for chemistry students and teachers to test knowledge of the periodic table.</h3>
+							<h3>about the TinyTable project:</h3>
+							<h4>
+							TinyTable is a capstone project written and developed by three students
+							from Portland Code School’s Winter Fullstack Javascript Program.
+							It was written in Javascript using a Node.js server, Thorax/Backbone.js framework and elements on Bootstrap on the front end. See table below for more specifics:
+							</h4>
+
+					<div class="col-xs-0 col-sm-2"></div>
+					<div class="col-xs-12 col-sm-6" id="about-table">
+						<table class="table">
+							<thead>
+								<tr>
+									<th >TOOL</th>
+									<th >NAME</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th >Language</th>
+									<th >Javascript</th>
+								</tr>
+								<tr>
+									<th >Sever</th>
+									<th >Node.js</th>
+								</tr>
+								<tr>
+									<th >Framework</th>
+									<th >Thorax (Backbone)</th>
+								</tr>
+								<tr>
+									<th >Template</th>
+									<th >Bootstrap</th>
+								</tr>
+								<tr>
+									<th >Router</th>
+									<th >Backbone.js</th>
+								</tr>
+								<tr>
+									<th >Database</th>
+									<th >Orchestrate</th>
+								</tr>
+								<tr>
+									<th >Libraries/Other</th>
+									<th >jQuery, Handlebars, Underscore</th>
+								</tr>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-xs-0 col-sm-2"></div>
+					</div>
+			</div>
+	</div>
+</body>
+</html>
