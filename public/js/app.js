@@ -43,7 +43,7 @@ define(function (require){
   //---------------------------------------------------------------------------------------------------------------------
 
 
-             var elementView = new ElementView({collection: elements, collection2: scores});
+            var elementView = new ElementView({collection: elements, collection2: scores});             
 
             var tableView = new TableView({
               collection: elements
@@ -57,6 +57,8 @@ define(function (require){
             });
 
             Backbone.history.start();
+
+
 
           });
 
