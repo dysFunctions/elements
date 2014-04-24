@@ -19,6 +19,7 @@ define(function (require){
 
 		initialize: function(options){
 			this.collection2 = options.collection2;
+			this.router = options.router;
 			/*this.player = prompt("Please enter your name: "); */
 			this.render();
 		},
