@@ -7,7 +7,8 @@ define(function (require){
 
 		events: {
 			"click #submit": "testFunc",
-			"click .modal-content button": "render",
+			"click #m1 button": "render",
+			"click #m2 button": "redirect",
 			'keypress #nameInput, #symbolInput' : 'checkForEnter'
 		},
 
@@ -17,21 +18,31 @@ define(function (require){
 
 		count: 0,
 
+		player: "Isaac Newton",
+
+		topScore: false,
+
 		initialize: function(options){
 			this.collection2 = options.collection2;
 			this.router = options.router;
-			/*this.player = prompt("Please enter your name: "); */
 			this.render();
 		},
 
 		render: function(){
-			if (this.count >= 10){
-				this.$('.modal').find('h3').html('Game Over!');
-				this.collection2.trigger('newScore',{name: this.player, score: this.score});
-				this.player = alert("Game Over! Click ok to try again."); // Make into modal
-				this.score = 0;
-				this.count = 0;
-				this.render();
+			if (this.count >= 3){
+				this.$el.find("#score").html(this.score+"/"+this.count);
+				if(this.scoring({score: this.score})){
+					this.$("#m2").find('h3').html("Top Ten Score!");
+					this.$("#m2").find('h4').html("You got " + this.score + " out of " + this.count + " correct!");
+					this.$("#m2").find('input').removeClass('inactive');
+					this.$("#m2").modal('show');
+				} else {
+					this.$("#m2").find('h3').html("Game Over!");
+					this.$("#m2").find('h4').html("You got "+this.score+" out of "+this.count+" correct!");
+					this.$("#m2").modal('show');					
+				}
+
+		
 			} else {
 			var randIndex = Math.floor(Math.random()*this.collection.length)
 			this.randIndex = randIndex;
@@ -86,25 +97,54 @@ define(function (require){
 				alert('Please enter valid fields');
 			}
 			else if (submission === correctAnswer){
-				this.$('.modal').find('h3').html('Congratulations! That is correct!');
-				this.$('.modal').modal({backdrop:'static', keyboard: false});
+				this.$('#m1').find('h3').html('Congratulations! That is correct!');
+				this.$('#m1').modal({backdrop:'static', keyboard: false});
 				this.score++;
-				this.$('.modal').find('button').click(function(e){
+				this.$('#m1').find('button').click(function(e){
 					e.preventDefault();
 					self.$("#nameInput").val('');
 					self.$("#symbolInput").val('');
 				});
 		} else {
 				var rightAnswer = correctAnswer[0].toUpperCase() + correctAnswer.slice(1);
-				this.$('.modal').find('h3').html('Sorry, that is incorrect. Correct answer is <br><strong>'+ rightAnswer+'</strong>');
-				this.$('.modal').modal({backdrop:'static',keyboard:false});
-				this.$('.modal').find("button").click(function(e){
+				this.$('#m1').find('h3').html('Sorry, that is incorrect. Correct answer is <br><strong>'+ rightAnswer +'</strong>');
+				this.$('#m1').modal({backdrop:'static',keyboard:false});
+				this.$('#m1').find("button").click(function(e){
 					e.preventDefault();
 					self.$("#nameInput").val('');
 					self.$("#symbolInput").val('');
 				 });
 			}
-		}
+		},
+
+		scoring: function(params){
+          var topTen = this.collection2.topTen();
+          var minScore = _.min(topTen);
+		  
+		  if(params.score > minScore){
+            this.collection2.shift();
+            this.topScore = true;
+            return true;
+          } else {
+          	return false;
+          }
+
+        },
+
+        redirect: function(){
+
+        	if(this.topScore){
+        		this.player = $('.modal').find('input').val().toString();
+        	}
+
+        	this.collection2.trigger('newScore',{name: this.player, score: this.score, topScore: this.topScore});
+        	this.topScore = false;
+        	this.score = 0;
+			this.count = 0;
+			this.$("#m2").find('input').addClass('inactive');
+        	this.router.navigate('highScores', {trigger:true,replace:true});
+        	this.render();
+        }
 	});
 
 	return ElementView;

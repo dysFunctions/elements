@@ -43,21 +43,17 @@ define(function (require){
   //---------------------------------------------------------------------------------------------------------------------
 
 
-            var elementView = new ElementView({collection: elements, collection2: scores});             
+             
 
             var tableView = new TableView({
               collection: elements
             });
 
-            var router = new Router({
-              quiz: elementView,
-              highScores: scoresView,
-              periodicTable: tableView,
-              about: about
-            });
+            var router = new Router({});
 
             Backbone.history.start();
 
+           var elementView = new ElementView({collection: elements, collection2: scores, router:router}); 
 
 
           });
