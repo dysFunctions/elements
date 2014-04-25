@@ -114,6 +114,26 @@ body {
 	margin-right: 50px;
 }
 
+/* About Tab =========================================*/
+
+#about {
+	margin-left: 100px;
+	margin-right: 100px;
+}
+#about h4 {
+	padding-top: 30px;
+}
+
+#about h3 {
+	padding-top: 30px;
+	text-align: left;
+}
+
+#about-table {
+	margin-top: 25px;
+
+}
+
 
 /* MEDIA QUERIES =================================== */
 
