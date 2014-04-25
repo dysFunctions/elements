@@ -29,7 +29,7 @@ define(function (require){
 		},
 
 		render: function(){
-			if (this.count >= 3){
+			if (this.count >= 10){
 				this.$el.find("#score").html(this.score+"/"+this.count);
 				if(this.scoring({score: this.score})){
 					this.$("#m2").find('h3').html("Top Ten Score!");
