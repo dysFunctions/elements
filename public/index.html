@@ -60,20 +60,32 @@
 			<div id="element-box" class="box">
 				<form role="form">
 					<div class="form-group">
-						<label for="element-name" >Element Name: </label>
-						<span id="name" class="inactive">...</span>
-						<input type = "text" placeholder="Enter Element Name" id="nameInput">
+						<div class="atomicNumber">
+							<p>Atomic number: <span id="atNum"></span></p>
+						</div>
 					</div>
-					<div class="form-group" id="numField">
-						<p>Atomic number: <span id="atNum"></span></p>
+					<div class="form-group">
+						<div class="symbol">
+							<h1 id="symbol">...</h1>
+							<input type="text" placeholder="Symbol" id="symbolInput" class="inactive">
+						</div>
 					</div>
-					<div class="form-group" id="symField">
-						<h1 id="symbol">...</h1>
-						<input type="text" placeholder="Enter Symbol" id="symbolInput" class="inactive">
-						<p>Atomic weight: <span id="atomic-weight">...</span> g/mol</p>
+						<div class="form-group">
+						<div class="elName">
+							<label for="element-name" >Element Name: </label>
+							<span id="name" class="inactive">...</span>
+							<input type="text" placeholder="Element Name" id="nameInput">
+						</div>
+						
+					</div>
+					<div class="form-group">
+						<div class="weight">
+							<p>Atomic weight: <span id="atomic-weight">...</span> g/mol</p>
+						</div>
 					</div>
 				</form>
 			</div>
+
 			<button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">Submit</button>
 			<!-- /element-box -->
 			<div id="message-box" class="box"></div>

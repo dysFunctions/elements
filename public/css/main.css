@@ -57,6 +57,15 @@ body {
 
 #element-box { 
 	display:block; z-index:1; 
+	position: relative;
+}
+
+.atomicNumber {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-top: 25px;
+	margin-left: 25px;
 }
 
 #message-box { 
@@ -69,24 +78,52 @@ body {
 
 #numField {
 	position: absolute:
+}
 
+#numField p {
+	text-align: left;
+	margin-left: 25px;
+	margin-top: 20px;
 }
 
 #symbol {
 	clear: both;
 	font-size: 10em;
 	text-align: center;
-	padding-top: 20%;
-	padding-bottom: 20%;
+	padding-top: 10%;
 }
 
 #symbolInput {
 	clear: both;
+	position: absolute;
 	width: 20%;
 	text-align: center;
-	margin-left: 40%;
 	margin-top: 35%;
-  	margin-bottom: 20%;
+  margin-bottom: 20%;
+}
+
+.elName {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.weight {
+	position: absolute;
+	text-align: center;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+}
+
+
+.weight p {
+	margin-top: 100px;
 }
 
 #submit {
@@ -96,7 +133,8 @@ body {
 }
 
 .form-group {
-	font-size: 14px;
+	text-align: center;
+	font-size: 18px;
 }
 
 .modal {
