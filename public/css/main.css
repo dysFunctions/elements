@@ -92,6 +92,7 @@ body {
 	right: 0;
 	margin-left: auto;
 	margin-right: auto;
+	padding: 0 15px 0 15px;
 }
 
 .weight {
@@ -118,7 +119,7 @@ body {
 
 .form-group {
 	text-align: center;
-	font-size: 18px;
+	font-size: 22px;
 }
 
 .modal {
@@ -170,9 +171,61 @@ img {
 
 /* MEDIA QUERIES =================================== */
 
+@media (max-width: 1110px) {
+	.box {
+		width: 75%;
+	}
+}
+
+@media (max-width: 870px) {
+	.box {
+		width: 85%;
+	}
+	#score {
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+}
+
 @media (max-width: 767px) {
 	#periodicTable {
 		margin-left: 0px;
 		margin-right: 0px;
 	}
+	.box {
+		width: 92%;
+	}
 }
+
+@media (max-width: 640px) {
+	.box {
+		width: 100%;
+	}
+}
+
+@media (max-width: 595px) {
+	#symbolInput {
+		margin-top: 25%;
+		font-size: 6em;
+		width: 150px;
+		height: 150px;
+	}
+	.form-group {
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 485px) {
+	#symbol {
+		font-size: 7em;
+	}
+	#symbolInput {
+		margin-top: 25%;
+	}
+	.box {
+		padding-bottom: 40%;
+	}
+}
+
