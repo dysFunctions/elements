@@ -32,6 +32,8 @@ body {
 	clear: left;
 }
 
+/* Quiz ========================================================= */
+
 .inactive{
 	display: none;
 }
@@ -39,54 +41,74 @@ body {
 #container {
 	margin-right: 12%;
 	margin-left: 12%;
-	color: #428BCA;
+	color: #1A7E66;
 }
 
 .box {
-	color: #428BCA;
-	width: 500px;
-	height: 500px;
+	color: #1A7E66;
+	width: 60%;
+	padding-bottom: 25%;
 	border: 1px solid #FFF;
 	background-color: #000;
-	box-shadow: 5px 5px 2px rgba(255,255,255, 0.75);
 	margin: auto;
 	margin-top: 2%;
-	margin-bottom: 2%;
+	margin-bottom: 2%; 
+	display:block; 
+	z-index:1; 
+	position: relative;
 }
 
-
-#element-box { 
-	display:block; z-index:1; 
+.atomicNumber {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-top: 25px;
+	margin-left: 25px;
 }
 
 #message-box { 
 	display:none; z-index:2;
 }
 
-#nameField {
-	float: left;
-}
-
-#numField {
-	position: absolute:
-
-}
-
 #symbol {
 	clear: both;
 	font-size: 10em;
 	text-align: center;
-	padding-top: 20%;
-	padding-bottom: 20%;
+	padding-top: 10%;
 }
 
 #symbolInput {
 	clear: both;
-	width: 20%;
+	font-size: 7em;
 	text-align: center;
-	margin-left: 40%;
-	margin-top: 35%;
-  	margin-bottom: 20%;
+	margin-top: 25%;
+	width: 200px;
+	height: 200px;
+}
+
+.elName {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0 15px 0 15px;
+}
+
+.weight {
+	position: absolute;
+	text-align: center;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+}
+
+
+.weight p {
+	margin-top: 100px;
 }
 
 #submit {
@@ -96,7 +118,8 @@ body {
 }
 
 .form-group {
-	font-size: 14px;
+	text-align: center;
+	font-size: 22px;
 }
 
 .modal {
@@ -148,9 +171,61 @@ img {
 
 /* MEDIA QUERIES =================================== */
 
+@media (max-width: 1110px) {
+	.box {
+		width: 75%;
+	}
+}
+
+@media (max-width: 870px) {
+	.box {
+		width: 85%;
+	}
+	#score {
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+}
+
 @media (max-width: 767px) {
 	#periodicTable {
 		margin-left: 0px;
 		margin-right: 0px;
 	}
+	.box {
+		width: 92%;
+	}
 }
+
+@media (max-width: 640px) {
+	.box {
+		width: 100%;
+	}
+}
+
+@media (max-width: 595px) {
+	#symbolInput {
+		margin-top: 25%;
+		font-size: 6em;
+		width: 150px;
+		height: 150px;
+	}
+	.form-group {
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 485px) {
+	#symbol {
+		font-size: 7em;
+	}
+	#symbolInput {
+		margin-top: 25%;
+	}
+	.box {
+		padding-bottom: 40%;
+	}
+}
+
