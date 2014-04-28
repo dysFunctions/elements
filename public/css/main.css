@@ -9,6 +9,12 @@ font-family: 'Source Code Pro', 'Arial';
 /*background-color: #D6D6D6;*/
 }
 
+/* Navigation Styles ============================================ */
+
+.navbar-default {
+	background-color: #C7F7E1;
+}
+
 .nav-tabs>li>a {
 	color: #132B2D;
 }
@@ -163,12 +169,17 @@ input {
 }
 
 #periodicTable {
+	padding: 15px;
 	margin-left: 50px;
 	margin-right: 50px;
 	color: #C7F7E1;
 	background-color: #132B2D;
 }
 
+#periodicTable h3 {
+	margin-top: 10px;
+	text-align: center;
+}
 /* About Tab =========================================*/
 
 #about {
@@ -263,7 +274,11 @@ img {
 	}
 	#symbolInput {
 		margin-top: 25%;
+		font-size: 4em;
+		width: 100px;
+		height: 100px;
 	}
+
 	.box {
 		padding-bottom: 40%;
 	}
