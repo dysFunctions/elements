@@ -7,6 +7,7 @@ define(function (require){
     var Scores = require('collections/scores')
     var ScoresView = require('views/scoresView');
     var TableView = require('views/tableView');
+    var yourScoreView = require('views/yourScoreView');
     var Router = require('router');
     var $ = require('jquery');
 
