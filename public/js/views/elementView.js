@@ -87,9 +87,9 @@ define(function (require){
 
 			answer.forEach(function(value){
 				if(value && activeDiv === "#nameInput"){
-					submission = value.toLowerCase();
+					submission += value.toLowerCase();
 				} else {
-					submission = value;
+					submission += value;
 				}
 			})
 
