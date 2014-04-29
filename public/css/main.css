@@ -11,10 +11,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-<<<<<<< HEAD
-font-family: 'Source Code Pro', 'Arial';
-/*background-color: #D6D6D6;*/
-=======
+
 	
 
 	font-family: 'Source Code Pro', 'Arial';
@@ -24,7 +21,6 @@ font-family: 'Source Code Pro', 'Arial';
 
 .navbar-default {
 	background-color: #C7F7E1;
->>>>>>> 7af961a2876c83fc59ab3b1558d8a7e681d45e51
 }
 
 .nav-tabs>li>a {
