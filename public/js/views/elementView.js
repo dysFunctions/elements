@@ -91,7 +91,7 @@ define(function (require){
 				} else {
 					submission += value;
 				}
-			})
+			});
 
 			if(submission === ''){
 				alert('Please enter valid fields');
