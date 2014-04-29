@@ -93,6 +93,8 @@ define(function (require){
 				}
 			})
 
+			console.log(submission);
+
 			if(submission === ''){
 				alert('Please enter valid fields');
 			}

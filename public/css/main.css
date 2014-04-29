@@ -1,10 +1,9 @@
 body {
-	background: url('http://thumbs.dreamstime.com/z/old-chemistry-laboratory-seamless-pattern-25961482.jpg') no-repeat center center fixed; 
+	background: url('../images/metal.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-	
 font-family: 'Source Code Pro', 'Arial';
 /*background-color: #D6D6D6;*/
 }

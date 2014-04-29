@@ -28,7 +28,7 @@ http.createServer(function(req, res){
 
 
 function staticFileHandler(pathname, res){
-	fs.readFile(__dirname + '/public' + pathname,{encoding: 'utf-8'}, function(err, data){
+	fs.readFile(__dirname + '/public' + pathname, function(err, data){
 		if (err) return err;
 		res.setHeader('Content-Type', mime.lookup(path.extname(pathname)));
 		res.end(data);
