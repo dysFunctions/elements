@@ -182,7 +182,7 @@ input {
 }
 /* About Tab =========================================*/
 
-.about {
+#about {
 	padding: 50px;
 	color: #C7F7E1;
 	background-color: #132B2D;
@@ -298,7 +298,7 @@ img {
 	}
 	#symbolInput {
 		margin-top: 25%;
-		font-size: 2em;
+		font-size: 4em;
 		width: 100px;
 		height: 100px;
 	}
