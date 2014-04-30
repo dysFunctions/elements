@@ -38,6 +38,12 @@ font-family: 'Source Code Pro', 'Arial';
 
 /* Scores Table ================================================= */
 
+#yourScore {
+	text-align: center;
+	padding-top: 50px;
+	font-size: 2em;	
+}
+
 #scores-table {
 	margin-top: 15px;
 	color: #C7F7E1;

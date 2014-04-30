@@ -7,10 +7,15 @@ define(function(require){
 
       initialize: function(){
         var self = this;
+        var count = 10;  // get the real count variable w/o breaking the quiz view
         this.collection.on('newScore', function(params){
           if(params.topScore){
-          self.collection.pushScores({name: params.name, score: params.score});
+            self.collection.pushScores({name: params.name, score: params.score});
+            self.$el.find('#yourScore').html("Your score:  " + params.score + " out of " + count)
+          } else {
+            self.$el.find('#yourScore').html("Your score:  " + params.score + " out of " + count)
           }
+          
           self.render();
       });
 
