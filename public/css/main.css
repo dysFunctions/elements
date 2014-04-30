@@ -1,11 +1,9 @@
 body {
-	
 	background: url(../images/chemlab2.jpeg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
-	
+  background-size: cover;	
 	font-family: 'Source Code Pro', 'Arial';
 }
 
@@ -153,6 +151,10 @@ input {
 	margin-bottom: 3%;
 }
 
+.nameHighlight {
+	border: 1px solid red;
+}
+
 #score {
 	margin-left: auto;
 	margin-right: auto;
@@ -226,9 +228,6 @@ img {
 	max-width: 50px;
 
 }
-
-
-
 
 /* MEDIA QUERIES =================================== */
 

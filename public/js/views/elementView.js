@@ -35,13 +35,12 @@ define(function (require){
 					this.$("#m2").find('h3').html("Top Ten Score!");
 					this.$("#m2").find('h4').html("You got " + this.score + " out of " + this.count + " correct!");
 					this.$("#m2").find('input').removeClass('inactive');
-					this.$("#m2").modal('show');
+					this.$("#m2").modal({backdrop:'static',keyboard:false});
 				} else {
 					this.$("#m2").find('h3').html("Game Over!");
 					this.$("#m2").find('h4').html("You got "+this.score+" out of "+this.count+" correct!");
-					this.$("#m2").modal('show');					
+					this.$("#m2").modal({backdrop:'static',keyboard:false});					
 				}
-
 		
 			} else {
 			var randIndex = Math.floor(Math.random()*this.collection.length)
@@ -137,13 +136,31 @@ define(function (require){
         		this.player = $('.modal').find('input').val().toString();
         	}
 
-        	this.collection2.trigger('newScore',{name: this.player, score: this.score, topScore: this.topScore});
-        	this.topScore = false;
-        	this.score = 0;
-			this.count = 0;
-			this.$("#m2").find('input').addClass('inactive');
-        	this.router.navigate('highScores', {trigger:true,replace:true});
-        	this.render();
+        	if (this.player === ''){
+
+        		setTimeout(function(){
+        			this.$("#m2").find('input').addClass("nameHighlight");
+        			this.$("#m2").modal({backdrop:'static',keyboard:false});
+        		}, 500);
+
+        	} else {
+
+	        	this.collection2.trigger('newScore',{name: this.player, score: this.score, topScore: this.topScore});
+	        	this.topScore = false;
+	        	this.score = 0;
+				this.count = 0;
+				this.$("#m2").find('input').val('');
+
+				if(this.$("#m2").find('input').hasClass("nameHighlight")){
+					this.$("#m2").find('input').removeClass("nameHighlight");
+				}
+				
+				this.$("#m2").find('input').addClass('inactive');
+	        	this.router.navigate('highScores', {trigger:true,replace:true});
+	        	this.render();
+
+        	}
+
         }
 	});
 
