@@ -277,6 +277,13 @@ img {
 		margin-left: 0px;
 		margin-right: 0px;
 	}
+
+	#symbolInput {
+		font-size: 2em;
+		width: 150px;
+		height: 150px;
+	}
+
 	.box {
 		width: 92%;
 	}
@@ -311,8 +318,6 @@ img {
 		font-size: 7em;
 	}
 	#symbolInput {
-		margin-top: 25%;
-		font-size: 4em;
 		width: 100px;
 		height: 100px;
 	}
