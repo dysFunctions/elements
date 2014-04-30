@@ -1,10 +1,11 @@
 body {
-	background: url(../images/chemlab2.jpeg) no-repeat center center fixed; 
+	background: url(../images/chemlab.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;	
 	font-family: 'Source Code Pro', 'Arial';
+	margin-bottom: 150px;
 }
 
 /* Navigation Styles ============================================ */
@@ -185,7 +186,7 @@ input {
 /* About Tab =========================================*/
 
 #about {
-	padding: 50px;
+	padding: 0px 50px 25px 50px;
 	color: #C7F7E1;
 	background-color: #132B2D;
 	overflow: auto;
@@ -215,13 +216,24 @@ img {
 	background-color: #D8765E;
 	border: 2px solid #F2D6C6;
 }
+
+#about-table {
+    border-collapse: collapse;
+}
+
 #about-table td {
 	vertical-align: middle;
 	text-align: left;
+	border: none;
+	padding-left: 0px;
 }
 
 #about-table td a {
 	color: #C7F7E1;
+}
+
+#techTable td {
+	padding-left: 8px
 }
 
 .gitLogos {
@@ -229,6 +241,9 @@ img {
 
 }
 
+#gitLogo {
+	padding-left: 12px;
+}
 /* MEDIA QUERIES =================================== */
 
 @media (max-width: 1020px) {
@@ -240,7 +255,7 @@ img {
 		margin-top: 0px;
 	}
 	.about {
-		padding: 25px;
+		padding: 0 25px 25px 25px;
 	}
 }
 
@@ -307,9 +322,7 @@ img {
 		margin-left: -15px;
 		width: 110%;
 	}
-	#about {
-		padding: 25px;
-	}
+	
 	#about-table {
 		font-size: 12px;
 	}
