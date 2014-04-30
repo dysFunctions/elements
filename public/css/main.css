@@ -1,19 +1,11 @@
 body {
-	/*background: url(../images/chemlab.jpeg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
-*/
-	background: url('http://thumbs.dreamstime.com/z/old-chemistry-laboratory-seamless-pattern-25961482.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
 	
-
+	background: url(../images/chemlab2.jpeg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	
 	font-family: 'Source Code Pro', 'Arial';
 }
 
@@ -194,12 +186,18 @@ input {
 	padding: 50px;
 	color: #C7F7E1;
 	background-color: #132B2D;
+	overflow: auto;
 }
 
 
 #about-table {
 	margin-top: 25px;
 
+}
+
+#about h4 {
+	margin-top: 30px;
+	margin-bottom: 10px;
 }
 
 img {
@@ -215,8 +213,23 @@ img {
 	background-color: #D8765E;
 	border: 2px solid #F2D6C6;
 }
+#about-table td {
+	vertical-align: middle;
+	text-align: left;
+}
+
+#about-table td a {
+	color: #C7F7E1;
+}
+
+.gitLogos {
+	max-width: 50px;
 
 }
+
+
+
+
 /* MEDIA QUERIES =================================== */
 
 @media (max-width: 1020px) {
@@ -226,6 +239,9 @@ img {
 	}
 	.homeRight {
 		margin-top: 0px;
+	}
+	.about {
+		padding: 25px;
 	}
 }
 
@@ -288,10 +304,23 @@ img {
 	}
 
 	.box {
-		padding-bottom: 40%;
+		padding-bottom: 55%;
+		margin-left: -15px;
+		width: 110%;
 	}
 	#about {
 		padding: 25px;
+	}
+	#about-table {
+		font-size: 12px;
+	}
+	.gitLogos {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.gitLogos .img-responsive {
+		width: 40%;
+		margin-left: 0px;
 	}
 }
 
