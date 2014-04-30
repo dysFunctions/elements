@@ -9,6 +9,7 @@
 	<link href="css/main.css"rel="stylesheet" type="text/css" >
 	<script src="js/lib/require.js" data-main="js/main" type="text/javascript" charset="utf-8"></script>
 	<link rel="shortcut icon" href="http://www.favicon.cc/logo3d/681140.png" size="16x16"> 
+	 <meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0" />
 </head>
 
 <body>
@@ -62,6 +63,7 @@
 	</nav>
 	
 		<div id="home">
+			
 			<div class="home col-sm-12">
 				
 				<div class="homeRight col-sm-7">
@@ -137,16 +139,17 @@
 
 					</div>
 
-					<div id="about" style="display: none">
-					
+					<div id="about" class="about" style="display: none">
+						
 						
 							<h4>TinyTable is a responsive, educational web app designed for anyone interested in learning the elements and their corresponding symbols. It was developed by students from Portland Code School and is written in full stack Javascript.
 							</h4>
-						<br><br>
+						
 						<h4>TECHNICAL STATS</h4>
-
-						<div id="about-table">
-							<table class="table">
+						
+						<div class="visible-xs col-xs-1 col-xs-offset-11"><span class="glyphicon glyphicon-resize-horizontal"></span></div>
+						<div class="table-responsive" id="about-table">
+							<table class="table table-bordered .table-condensed" id="techTable">
 						
 							<tbody>
 								<tr>
@@ -154,31 +157,73 @@
 									<td>Javascript</td>
 								</tr>
 								<tr>
-									<th >Server</th>
-									<th >node.js</th>
+									<td>Server</td>
+									<td>node.js</td>
 								</tr>
 								<tr>
-									<th >Framework</th>
-									<th >Thorax (Backbone)</th>
+									<td>Framework</td>
+									<td>Thorax (Backbone)</td>
 								</tr>
 								<tr>
-									<th >Router</th>
-									<th >Backbone.js</th>
+									<td>Router</td>
+									<td>Backbone.js</td>
 								</tr>
 								<tr>
-									<th >Database</th>
-									<th >Orchestrate</th>
+									<td>Database</td>
+									<td>Orchestrate</td>
 								</tr>
 								<tr>
-									<th >Libraries/Other</th>
-									<th >jQuery, Bootstrap, Handlebars, Underscore</th>
+									<td>Libraries/Other</td>
+									<td>jQuery, Bootstrap, Handlebars, Underscore</td>
 								</tr>
+								<tr>
+									<td>Project Management</td>
+									<td>Trello</td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
-					<div class="col-xs-0 col-sm-2"></div>
+					
+					<h4>TEAM INFO</h4>
+
+					<div class="table-responsive hidden-xs" id="about-table">
+						<table class="table table-bordered .table-condensed">	
+							<tbody>
+								<tr>
+									<td><a href="https://github.com/whyqqqqq"><img src="images/gitLogo.png" class="gitLogos img-responsive" id="gitLogo" alt="Github Logo"></a></td>
+									<td><a href="https://github.com/whyqqqqq">Amanda Houle</a></td>
+									<td><a href="https://github.com/abbystevens"><img src="images/gitLogo.png" class="gitLogos img-responsive" id="gitLogo" alt="Github Logo"></a></td>
+									<td><a href="https://github.com/abbystevens">Abby Stevens</a></td>
+									<td><a href="https://github.com/jstiehl"><img src="images/gitLogo.png" class="gitLogos img-responsive" id="gitLogo" alt="Github Logo"></a></td>
+									<td><a href="https://github.com/jstiehl">James Stiehl</a></td>
+									
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="table-responsive hidden-sm hidden-md hidden-lg" id="about-table">
+						<table class="table table-bordered .table-condensed">	
+							<tbody>
+								<tr>
+									<td><a href="https://github.com/whyqqqqq"><img src="images/gitLogo.png" class="gitLogos img-responsive" alt="Github Logo"></a></td>
+									<td class="name"><a href="https://github.com/whyqqqqq">Amanda Houle</a></td>
+								</tr>
+								<tr>
+									<td><a href="https://github.com/jstiehl"><img src="images/gitLogo.png" class="gitLogos img-responsive" alt="Github Logo"></a></td>
+									<td class="name"><a href="https://github.com/jstiehl">James Stiehl</a></td>
+								</tr>
+								<tr>
+									<td><a href="https://github.com/abbystevens"><img src="images/gitLogo.png" class="gitLogos img-responsive" alt="Github Logo"></a></td>
+									<td class="name"><a href="https://github.com/abbystevens">Abby Stevens</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					
+
 			</div>
 		</div>
+	
 </body>
 </html>

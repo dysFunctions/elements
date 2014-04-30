@@ -1,12 +1,11 @@
 body {
-	background: url('http://thumbs.dreamstime.com/z/old-chemistry-laboratory-seamless-pattern-25961482.jpg') no-repeat center center fixed; 
+	background: url(../images/chemlab.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
-	
-font-family: 'Source Code Pro', 'Arial';
-/*background-color: #D6D6D6;*/
+  background-size: cover;	
+	font-family: 'Source Code Pro', 'Arial';
+	margin-bottom: 150px;
 }
 
 /* Navigation Styles ============================================ */
@@ -159,6 +158,10 @@ input {
 	margin-bottom: 3%;
 }
 
+.nameHighlight {
+	border: 1px solid red;
+}
+
 #score {
 	margin-left: auto;
 	margin-right: auto;
@@ -189,15 +192,21 @@ input {
 /* About Tab =========================================*/
 
 #about {
-	padding: 50px;
+	padding: 0px 50px 25px 50px;
 	color: #C7F7E1;
 	background-color: #132B2D;
+	overflow: auto;
 }
 
 
 #about-table {
 	margin-top: 25px;
 
+}
+
+#about h4 {
+	margin-top: 30px;
+	margin-bottom: 10px;
 }
 
 img {
@@ -214,6 +223,32 @@ img {
 	border: 2px solid #F2D6C6;
 }
 
+#about-table {
+    border-collapse: collapse;
+}
+
+#about-table td {
+	vertical-align: middle;
+	text-align: left;
+	border: none;
+	padding-left: 0px;
+}
+
+#about-table td a {
+	color: #C7F7E1;
+}
+
+#techTable td {
+	padding-left: 8px
+}
+
+.gitLogos {
+	max-width: 50px;
+
+}
+
+#gitLogo {
+	padding-left: 12px;
 }
 /* MEDIA QUERIES =================================== */
 
@@ -224,6 +259,9 @@ img {
 	}
 	.homeRight {
 		margin-top: 0px;
+	}
+	.about {
+		padding: 0 25px 25px 25px;
 	}
 }
 
@@ -245,6 +283,13 @@ img {
 		margin-left: 0px;
 		margin-right: 0px;
 	}
+
+	#symbolInput {
+		font-size: 2em;
+		width: 150px;
+		height: 150px;
+	}
+
 	.box {
 		width: 92%;
 	}
@@ -279,17 +324,26 @@ img {
 		font-size: 7em;
 	}
 	#symbolInput {
-		margin-top: 25%;
-		font-size: 4em;
 		width: 100px;
 		height: 100px;
 	}
 
 	.box {
-		padding-bottom: 40%;
+		padding-bottom: 55%;
+		margin-left: -15px;
+		width: 110%;
 	}
-	#about {
-		padding: 25px;
+	
+	#about-table {
+		font-size: 12px;
+	}
+	.gitLogos {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.gitLogos .img-responsive {
+		width: 40%;
+		margin-left: 0px;
 	}
 }
 
