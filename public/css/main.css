@@ -153,7 +153,7 @@ input {
 }
 
 .nameHighlight {
-	border: 1px solid red;
+	border: 1px solid #D8765E;
 }
 
 #score {
@@ -269,6 +269,9 @@ img {
 		margin-left: auto;
 		margin-right: auto;
 	}
+	.weight p {
+		margin-top: 70px;
+	}
 	
 }
 
@@ -279,9 +282,9 @@ img {
 	}
 
 	#symbolInput {
-		font-size: 2em;
-		width: 150px;
-		height: 150px;
+		font-size: 4em;
+		width: 200px;
+		height: 200px;
 	}
 
 	.box {
@@ -314,16 +317,25 @@ img {
 }
 
 @media (max-width: 485px) {
+	.home {
+		padding-top: 25px;
+		padding-bottom: 25px;
+	}
 	#symbol {
-		font-size: 7em;
+		font-size: 2em;
+		padding-top: 20%;
 	}
 	#symbolInput {
-		width: 100px;
-		height: 100px;
+		font-size: 2em;
+		width: 150px;
+		height: 150px;
 	}
 
+	.weight p {
+		margin-top: 45px;
+	}
 	.box {
-		padding-bottom: 55%;
+		padding-bottom: 50%;
 		margin-left: -15px;
 		width: 110%;
 	}
