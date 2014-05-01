@@ -145,7 +145,7 @@ define(function (require){
 
         	} else {
 
-	        	this.collection2.trigger('newScore',{name: this.player, score: this.score, topScore: this.topScore});
+	        	this.collection2.trigger('newScore',{name: this.player, score: this.score, topScore: this.topScore, count: this.count});
 	        	this.topScore = false;
 	        	this.score = 0;
 				this.count = 0;
